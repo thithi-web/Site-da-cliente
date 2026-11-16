@@ -4,6 +4,9 @@
     box-sizing: border-box;
 }
 
+body{
+    background-color: #f8f3f0;
+}
 header{
     display: grid;
 
@@ -11,7 +14,13 @@ header{
     text-align: center;
     font-size: 20px;
     height: 10vh;
-    background-color: #70394c;
+    background-color: transparent;
+    position: absolute;
+}
+
+header img{
+    width: 150px;
+    height: 100px;
 }
 
 nav{
@@ -22,6 +31,7 @@ nav{
     padding-bottom: 20px;
 
     color: antiquewhite;
+    margin-left: 100px;
 }
 
 a{
@@ -33,6 +43,7 @@ img{
     width: 100%;
     height: 80vh;
     background-size: cover;
+    
 }
 
 section{
@@ -70,7 +81,7 @@ section img{
     align-items: center;
     height: 400px;
     gap: 100px;
-    padding-right: ;
+    
     margin-right: 150px;
     
 }
@@ -104,4 +115,67 @@ section img{
 
 .descrição button{
     width: 100px;
+    align-self: flex-end;
+    border: none;
+    border-radius: 10px;
+    background-color: #70394c;
+
+    font-weight: bold;
+    font-size: 20px;
+    width: 200px;
+    height: 60px;
+}
+
+.avalie{
+    background-color: #70394c;
+    display: flexbox;
+    flex-direction: column;
+
+    width: 800px;
+    height: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    
+
+    align-items: flex-end;
+   
+
+}
+
+.avaliacao{
+    background-color: antiquewhite;
+    
+    width: 200px;
+    height: 80px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.avaliacao p{
+    color: black;
+}
+.avalie form{
+    display: flexbox;
+    flex-direction: column;
+    width: 300px;
+    gap: 10px;
+    
+}
+
+.avalie, .avaliacao{
+    color: antiquewhite;
+}
+
+.avalie textarea{
+    border-radius: 10px;
+    margin-top: 10px;
+    border: none;
+}
+
+footer{
+    font-size: 30px;
+    width: auto;
+    height: 200px;
+    background-color: #70394c;
 }

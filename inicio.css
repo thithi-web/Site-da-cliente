@@ -15,7 +15,8 @@ header{
     font-size: 20px;
     height: 10vh;
     background-color: transparent;
-    position: absolute;
+    position: relative;
+    z-index: 2;
 }
 
 header img{
@@ -36,15 +37,49 @@ nav{
 
 a{
     text-decoration: none;
-    color: aliceblue;
+    color: rgb(14, 124, 220);
 }
 
-img{
+button{
+    background-color: #70394c;
+    color: #f8f3f0;
+    position: relative;
+    top: 400px;
+    left: 1000px;
+
+    width: 250px;
+    height: 50px;
+
+    border: none;
+    border-radius: 10px;
+
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#banner{
     width: 100%;
-    height: 80vh;
+    height: 100vh;
     background-size: cover;
+    box-shadow: 0px 10px 20px #00000025;
+    position: relative;
+    z-index: -2;
+
+    bottom: 150px;
     
 }
+
+#overlay{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+
+    background-color: #70394c34;
+    z-index: -1;
+}
+
 
 section{
     display: flex;

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento Online</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            max-width: 450px;
+            width: 100%;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-top: 0;
+        }
+
+        .header-calendario {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .header-calendario button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .header-calendario button:hover {
+            background: #0056b3;
+        }
+
+        .dias-semana {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            text-align: center;
+            font-weight: bold;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .dias-mes {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+        }
+
+        .dia {
+            padding: 12px 0;
+            text-align: center;
+            background: #f0f0f0;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .dia:hover {
+            background: #007bff;
+            color: white;
+        }
+
+        .dia.selecionado {
+            background: #0056b3;
+            color: white;
+            font-weight: bold;
+        }
+
+        .dia.vazio {
+            background: transparent;
+            cursor: default;
+        }
+
+        /* Área de Horários */
+        #area-horarios {
+            margin-top: 25px;
+            display: none;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .lista-horarios {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .btn-horario {
+            padding: 10px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .btn-horario:hover {
+            background: #218838;
+        }
+
+        .input-nome {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Escolha uma Data</h2>
+    
+    <div class="header-calendario">
+        <button onclick="mudarMes(-1)">&#10094;</button>
+        <span id="mes-ano" style="font-weight: bold; font-size: 1.1em;"></span>
+        <button onclick="mudarMes(1)">&#10095;</button>
+    </div>
+
+    <div class="dias-semana">
+        <div>Dom</div><div>Seg</div><div>Ter</div><div>Qua</div><div>Qui</div><div>Sex</div><div>Sáb</div>
+    </div>
+
+    <div class="dias-mes" id="dias-mes"></div>
+
+    <!-- Área que aparece ao clicar no dia -->
+    <div id="area-horarios">
+        <h3 id="titulo-dia-selecionado" style="margin-top: 0; font-size: 1em; color: #333;"></h3>
+        <input type="text" id="nome-cliente" class="input-nome" placeholder="Digite seu nome completo..." required>
+        <div class="lista-horarios" id="lista-horarios"></div>
+    </div>
+</div>
+
+<script>
+    // CONFIGURAÇÃO DA DONA DO SITE
+    const TELEFONE_DONA = "5511999999999"; // Coloque o DDI + DDD + Número (Ex: 5511988887777)
+    const HORARIOS_DISPONIVEIS = ["09:00", "10:00", "11:00", "14:00", "15:00", "16:00", "17:00"];
+
+    let dataAtual = new Date();
+    let diaSelecionadoTexto = "";
+
+    const meses = [
+        "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
+        "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
+    ];
+
+    function renderizarCalendario() {
+        const ano = dataAtual.getFullYear();
+        const mes = dataAtual.getMonth();
+
+        document.getElementById("mes-ano").innerText = `${meses[mes]} ${ano}`;
+
+        const primeiroDiaSemana = new Date(ano, mes, 1).getDay();
+        const ultimoDiaMes = new Date(ano, mes + 1, 0).getDate();
+
+        const containerDias = document.getElementById("dias-mes");
+        containerDias.innerHTML = "";
+
+        // Espaços vazios antes do dia 1
+        for (let i = 0; i < primeiroDiaSemana; i++) {
+            const divVazia = document.createElement("div");
+            divVazia.classList.add("dia", "vazio");
+            containerDias.appendChild(divVazia);
+        }
+
+        // Dias do mês
+        for (let dia = 1; dia <= ultimoDiaMes; dia++) {
+            const divDia = document.createElement("div");
+            divDia.classList.add("dia");
+            divDia.innerText = dia;
+
+            divDia.onclick = () => selecionarDia(divDia, dia, mes + 1, ano);
+            containerDias.appendChild(divDia);
+        }
+    }
+
+    function mudarMes(direcao) {
+        dataAtual.setMonth(dataAtual.getMonth() + direcao);
+        document.getElementById("area-horarios").style.display = "none";
+        renderizarCalendario();
+    }
+
+    function selecionarDia(elemento, dia, mes, ano) {
+        // Remove destaque dos outros dias
+        document.querySelectorAll(".dia").forEach(d => d.classList.remove("selecionado"));
+        elemento.classList.add("selecionado");
+
+        const diaFormatado = String(dia).padStart(2, '0');
+        const mesFormatado = String(mes).padStart(2, '0');
+        diaSelecionadoTexto = `${diaFormatado}/${mesFormatado}/${ano}`;
+
+        // Mostra a área de horários
+        const areaHorarios = document.getElementById("area-horarios");
+        areaHorarios.style.display = "block";
+        document.getElementById("titulo-dia-selecionado").innerText = `Horários para ${diaSelecionadoTexto}:`;
+
+        const listaHorarios = document.getElementById("lista-horarios");
+        listaHorarios.innerHTML = "";
+
+        HORARIOS_DISPONIVEIS.forEach(horario => {
+            const btn = document.createElement("button");
+            btn.classList.add("btn-horario");
+            btn.innerText = horario;
+            btn.onclick = () => confirmarAgendamento(horario);
+            listaHorarios.appendChild(btn);
+        });
+    }
+
+    function confirmarAgendamento(horario) {
+        const nomeCliente = document.getElementById("nome-cliente").value.trim();
+
+        if (!nomeCliente) {
+            alert("Por favor, digite seu nome antes de escolher o horário!");
+            document.getElementById("nome-cliente").focus();
+            return;
+        }
+
+        // Mensagem que será enviada para a dona do site
+        const mensagem = `Olá! Gostaria de confirmar um agendamento:\n\n*Cliente:* ${nomeCliente}\n*Data:* ${diaSelecionadoTexto}\n*Horário:* ${horario}`;
+        
+        // 1. Notificação visual no site
+        alert(`Agendamento selecionado para ${diaSelecionadoTexto} às ${horario}.\nVocê será redirecionado para enviar a notificação!`);
+
+        // 2. Abre o WhatsApp da dona do site com a mensagem pronta
+        const urlWhatsApp = `https://wa.me{TELEFONE_DONA}?text=${encodeURIComponent(mensagem)}`;
+        window.open(urlWhatsApp, "_blank");
+    }
+
+    // Inicia o calendário
+    renderizarCalendario();
+</script>
+
+</body>
+</html>

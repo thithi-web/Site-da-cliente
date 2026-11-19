@@ -1,0 +1,167 @@
+*{
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+
+body{
+  background-image: url(./imagens/sala.jpg);
+  height: 150vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 100px;
+  
+}
+
+header{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+
+  text-align: center;
+  font-size: 25px;
+  height: 20vh;
+
+  background-color: #70394c;
+  position: relative;
+  z-index: 2;
+
+  box-shadow: -10px 5px 50px #70394c;
+}
+
+header img{
+  width: 150px;
+  height: 120px;
+
+  background-color: #f8f3f0;
+  border-radius: 40px;
+  padding: 10px;
+}
+
+nav{
+  display: grid;
+
+  grid-template-columns: 1fr 1fr 1fr 1fr ;
+  align-items: center;
+  
+
+  color: antiquewhite;
+  background-color: #70394c;
+  margin-left: 100px;
+
+  font-weight: bold;
+}
+
+a{
+  text-decoration: none;
+  color: #f8f3f0;
+
+  position: relative;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+a:hover{
+  text-decoration: underline ;
+  transform: translateX(10px);
+  transition: 0.5s ease-out;
+}
+
+
+
+.container{
+  background-color: rgb(169, 217, 240);
+  max-width: 500px;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+
+  border-radius: 12px;
+  margin: 10px;
+  padding: 20px;
+  padding-bottom: 20px;
+
+
+}
+
+.icone{
+  text-align: center;
+  margin: 10px;
+
+}
+
+.icone img{
+  width: 200px;
+
+}
+
+h1{
+  text-align: center;
+  color: rgb(117, 4, 0);
+  font-size: 26px;
+}
+
+p{
+  text-align: center;
+  color: rgb(7, 19, 4);
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+/* FORMULARIO */
+
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label{
+  margin-top: 15px;
+  margin-bottom: 7px ;
+  font-weight: bold;
+  color: rgb(93, 24, 139);
+}
+
+input,
+select{
+  padding: 13px;
+  border: 1px solid #373368;
+  border-radius: 6px;
+  font-size: 15px;
+  width: 100%;
+}
+
+textarea{
+  min-height: 100px;
+  resize: vertical;
+}
+
+button{
+  width: 100px;
+  margin-top: 25px;
+  padding: 15px;
+  background-color: #330f61;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor:pointer;
+}
+
+button:hover{
+  background-color: #200446;
+
+}
+
+@media(max-width:480px) {
+  .container{
+      padding: 20px;
+  }
+  h1 {
+      font-size: 22px;
+  }
+}

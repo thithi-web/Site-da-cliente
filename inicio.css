@@ -15,19 +15,19 @@ header{
     font-size: 25px;
     height: 20vh;
 
-    background-color: #70394c;
+    background-color: transparent;
     position: relative;
-    z-index: 2;
+    z-index: 1;
 
-    box-shadow: -10px 5px 50px #70394c;
+    
 }
 
 header img{
-    width: 150px;
-    height: 120px;
+    width: 80px;
+    
 
-    background-color: #f8f3f0;
-    border-radius: 40px;
+    
+    
     padding: 10px;
 }
 
@@ -39,7 +39,7 @@ nav{
     
 
     color: antiquewhite;
-    background-color: #70394c;
+    background-color: transparent;
     margin-left: 100px;
 
     font-weight: bold;
@@ -65,7 +65,7 @@ a:hover{
 }
 
 #bAgendar{
-    background-color: #70394c;
+    background-color: #611e35;
     color: #f8f3f0;
     position: relative;
     top: 400px;
@@ -84,7 +84,7 @@ a:hover{
 }
 
 #bAgendar:hover{
-    background-color: #611e35;
+    background-color: #401423;
     font-size: 25px;
     transform: scale(1.1);
     transition: 0.2s;
@@ -94,11 +94,11 @@ a:hover{
     width: 100%;
     height: 100vh;
     background-size: cover;
-    box-shadow: 0px 10px 20px #00000025;
+    box-shadow: 0px 10px 20px #00000043;
     position: relative;
-    z-index: -2;
 
-    bottom: 150px;
+    bottom: 200px;
+    z-index: -2;
     
 }
 
@@ -194,6 +194,18 @@ section img{
     height: 60px;
 }
 
+.avalie, .criadorar img, .criadorar button, #bAgendar{
+    box-shadow: 0px 10px 20px black;
+}
+
+section img{
+    box-shadow: 10px 10px 30px black;
+}
+
+section img:hover{
+    transform: scale(1.1);
+    transition: 0.8s;
+}
 .avalie{
     background-color: #70394c;
     display: flexbox;

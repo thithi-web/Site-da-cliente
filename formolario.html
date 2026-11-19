@@ -4,34 +4,55 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="formolario.css">
+
 </head>
 <body>
+
+  <header>
+    <img src="./imagens/Logo Luxuoso Luiza Arraes Studio.png" alt="">
+    <nav>
+        <a href="./inicio.html" > INICIO</a>
+        <a href="./servicos.html"> SERVIÇOS</a>
+        <a href="local.html"> NOS ENCONTREM</a>
+        <a href=""> SOBRE MIM</a>
+    </nav>
+</header>
 
   <main class="container">
 
     <div class="icone">
-            <img src="./imagens/logo.png" alt="icone da sister">
+            <img src="./imagens/logo.png.png" alt="icone da luiza">
         </div>
-        <hi> Bem-vindo ao Luiza Arres</hi>
+        <h1> Bem-vindo ao Luiza Arres</h1>
         <p>para agendar um horário, por favor preencha o fórmulario que está á abaixo</p>
         <form id="formulario">
 
-            <!-- CAMPO DE NOME -->
-            <label for="nome">NOME COMPLETO: </label>
-            <input type="text" id="nome" placeholder="Di gite seu nome aqui" required>
+          <!-- CAMPO DE NOME -->
+          <label for="nome">NOME COMPLETO: </label>
+          <input type="text" id="nome" placeholder="Di gite seu nome aqui" required>
 
-            <!-- CAMPO DE TELEFONE -->
-            <label for="telefone">Telefone:</label>
-            <input type="tel" placeholder="Ex: (11) 4002-8922" id="telefone" required>
+          <!-- CAMPO DE TELEFONE -->
+          <label for="telefone">Telefone:</label>
+          <input type="tel" placeholder="Ex: (11) 4002-8922" id="telefone" required>
 
-            <label for="">Qual dos serviços seia?</label>
-            <select id="festa">
-                <option value="">selecione uma das opções</option>
-                <option value="anivesário">Brow Lamination</option>
-                <option value="comemoração">Design com henna</option>
-                <option value="casamento">Design de sobrancelhas</option>
-                
+          <label for="">Qual dos serviços seia?</label>
+          <select id="festa">
+            <option value="">selecione uma das opções</option>
+            <option value="BrowLami">Brow Lamination</option>
+            <option value="comemoração">Design com henna</option>
+            <option value="casamento">Design de sobrancelhas</option>
+          </select> 
+
+          <button type="submit">próximo</button>
+        </form>
+
+        <div id="calendario" class="calendario"></div>
+    </div>
   </main>
+
+  <script src="./formolario.js"></script>
+
   
 </body>
 </html>

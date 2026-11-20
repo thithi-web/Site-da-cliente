@@ -22,8 +22,8 @@
   <main class="container">
 
     <div class="icone">
-            <img src="./imagens/logo.png.png" alt="icone da luiza">
-        </div>
+      <img src="./imagens/logo.png.png" alt="icone da luiza">
+    </div>
         <h1> Bem-vindo ao Luiza Arres</h1>
         <p>para agendar um horário, por favor preencha o fórmulario que está á abaixo</p>
         <form id="formulario">
@@ -37,18 +37,40 @@
           <input type="tel" placeholder="Ex: (11) 4002-8922" id="telefone" required>
 
           <label for="">Qual dos serviços seia?</label>
-          <select id="festa">
+          <select id="servico">
             <option value="">selecione uma das opções</option>
             <option value="BrowLami">Brow Lamination</option>
-            <option value="comemoração">Design com henna</option>
-            <option value="casamento">Design de sobrancelhas</option>
+            <option value="henna">Design com henna</option>
+            <option value="sonbran">Design de sobrancelhas</option>
           </select> 
 
           <button type="submit">próximo</button>
         </form>
 
-        <div id="calendario" class="calendario"></div>
-    </div>
+        <!-- Área do Calendário -->
+        <div id="calendario" class="calendario" style="display: none;">
+
+
+          <hr class="divisor">
+          <h2>Escolha qual á Data você prevere</h2>
+        
+          <div class="cabeca-calendario">
+            <button type="button" onclick="mudarMes(-1)"><</button>
+            <span id="mes-ano"></span>
+            <button type="button" onclick="mudarMes(1)">></button>
+          </div>
+
+          <div class="dias-semana">
+            <div>Dom</div><div>Seg</div><div>Ter</div><div>Qua</div><div>Qui</div><div>Sex</div><div>Sáb</div>
+          </div>
+
+          <div class="dias-mes" id="dias-mes"></div>
+
+          <div id="horarios" style="display: none;">
+            <h3 id="titulo-dia-selecionado"></h3>
+            <div class="lista-horarios" id="lista-horarios"></div>
+          </div>
+        </div>
   </main>
 
   <script src="./formolario.js"></script>

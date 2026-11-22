@@ -113,6 +113,53 @@ a:hover{
     z-index: -1;
 }
 
+/* acabador de felicidade */
+.container-slider {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+}
+
+.container-images {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1200px;
+    min-width: 900px; /* Largura total para caberem 3 fotos confortavelmente */
+    overflow: hidden; /* Esconde as fotos que estão fora da área visível */
+}
+
+.slider-track {
+  display: flex;
+  gap: 15px; /* Espaço entre as fotos */
+  transition: transform 0.4s ease-in-out; /* Animação suave ao deslizar */
+}
+
+.slider {
+  width: 390px;       /* Largura fixa de cada foto */
+  height: 300px;      /* Altura menor para a foto ficar horizontal */
+  flex-shrink: 0;     /* Impede que o Flexbox esprema as fotos para caberem todas juntas */
+  object-fit: cover;  /* Corta as sobras sem deformar a imagem */
+  object-position: top; /* Foca na parte de cima da foto */
+  border-radius: 10px;
+}
+
+
+#prev-button, #next-button {
+  width: 60px;
+  height: 60px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+#prev-button img, #next-button img {
+  width: 60px;
+  height: 60px;
+}
 
 section{
     display: flex;
@@ -123,22 +170,6 @@ section{
     width: 100%;
     gap: 40px;
     margin-top: 100px;
-}
-
-
-
-section img{
-    width: 300px;
-    height: 500px;
-    
-}
-
-.seta{
-    margin-top:150px ;
-    border-radius: 100%;
-    height: 60px;
-    width: 60px;
-    background-color: black;
 }
 
 .criadorar{

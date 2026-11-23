@@ -161,6 +161,10 @@ a:hover{
   height: 60px;
 }
 
+#prev-button {
+    transform: rotatex(180);
+}
+
 section{
     display: flex;
     flex-direction:row ;

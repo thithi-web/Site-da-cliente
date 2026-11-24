@@ -24,10 +24,6 @@ header{
 
 header img{
     width: 80px;
-    
-
-    
-    
     padding: 10px;
 }
 
@@ -120,13 +116,13 @@ a:hover{
   min-height: 100vh;
   align-items: center;
   justify-content: center;
-  gap: 100px;
+  gap: 50px;
 }
 
 .container-images {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     width: 1200px;
     min-width: 900px; /* Largura total para caberem 3 fotos confortavelmente */
     overflow: hidden; /* Esconde as fotos que estão fora da área visível */
@@ -134,6 +130,8 @@ a:hover{
 
 .slider-track {
   display: flex;
+  align-items: center;
+  height: 500px; 
   gap: 15px; /* Espaço entre as fotos */
   transition: transform 0.4s ease-in-out; /* Animação suave ao deslizar */
 }
@@ -159,10 +157,11 @@ a:hover{
 #prev-button img, #next-button img {
   width: 60px;
   height: 60px;
+  box-shadow: none;
 }
 
 #prev-button {
-    transform: rotatex(180);
+    transform: rotatey(180deg);
 }
 
 section{
@@ -170,10 +169,10 @@ section{
     flex-direction:row ;
     
     justify-content: center ;
-    height: 100vh;
+    height: 80vh;
     width: 100%;
-    gap: 40px;
-    margin-top: 100px;
+    gap: 0px;
+    
 }
 
 .criadorar{
@@ -186,6 +185,7 @@ section{
     gap: 100px;
     
     margin-right: 150px;
+    margin-bottom: -100px;
     
 }
 
@@ -282,6 +282,18 @@ section img:hover{
     color: antiquewhite;
 }
 
+.avalie button{
+   background-color: antiquewhite;
+    border: none;
+    
+    width: 40px;
+    height: 40px;
+}
+.avalie button img{
+    transform: rotatez(90deg);
+    width: 40px;
+    height: 40px;
+}
 .avalie textarea{
     border-radius: 10px;
     margin-top: 10px;

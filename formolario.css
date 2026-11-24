@@ -182,7 +182,7 @@ button:hover{
   justify-content: space-between;
   align-items: center;
   margin-bottom: 15px;
-  color: #330f61;
+  color: #5c0a27;
   font-weight: bold;
 }
 
@@ -271,7 +271,7 @@ button:hover{
 }
 
 .btn-horario:hover:not(:disabled) {
-  background-color: #330f61;
+  background-color: #5c0a27;
 }
 
 .btn-horario:disabled {

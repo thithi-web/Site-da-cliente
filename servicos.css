@@ -21,6 +21,7 @@ header{
     z-index: 2;
 
     box-shadow: -10px 5px 50px #70394c;
+    
 
     
 }
@@ -38,7 +39,7 @@ nav{
     display: grid;
 
     grid-template-columns: 1fr 1fr 1fr 1fr ;
-    align-items: center;
+    align-items: center;    
     
 
     color: antiquewhite;
@@ -85,13 +86,17 @@ section{
     flex-direction:row ;
     
     justify-content: center ;
-    height: 100vh;
+    height: 70vh;
     width: 100%;
     gap: 40px;
-    margin-top: 100px;
+    margin-bottom: 40px;
 }
 
-
+#primeiro{
+    margin-top: 100px;
+    margin-bottom: 50px;
+    height: 110vh;
+}
 
 section img{
     width: 300px;

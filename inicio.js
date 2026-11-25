@@ -68,3 +68,25 @@ window.addEventListener('resize', updateSlider);
 
 // Atualiza quando a página carregar
 window.addEventListener('load', updateSlider);
+
+const formAvaliacao = document.getElementById('form-avaliacao');
+const msgSucesso = document.getElementById('msg-sucesso');
+
+if (formAvaliacao) {
+    formAvaliacao.addEventListener('submit', function(evento) {
+        evento.preventDefault(); // Impede o envio real e o recarregamento da página
+
+        // Mostra a mensagem de sucesso
+        msgSucesso.style.display = 'block';
+
+        // Limpa o comentário e desmarca as estrelas
+        formAvaliacao.reset();
+        const estrelasMarcadas = document.querySelectorAll('input[name="nota"]');
+        estrelasMarcadas.forEach(estrela => estrela.checked = false);
+
+        // Esconde a mensagem depois de 4 segundos
+        setTimeout(() => {
+            msgSucesso.style.display = 'none';
+        }, 4000);
+    });
+}

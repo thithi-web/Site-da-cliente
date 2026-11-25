@@ -65,24 +65,36 @@
 
         
         <section>
-
             <div class="avalie">
-                
                 <div class="avaliacao">
-                    <p>qual é sua avaliação </p>
-                    <button><img src="./imagens/arrow.png" alt="next-button"></button>
+                    <p>Qual é sua avaliação?</p>
+                    <div class="estrelas">
+                        <input type="radio" id="estrela5" name="nota" value="5">
+                        <label for="estrela5" title="5 estrelas">&#9733;</label>
+                        
+                        <input type="radio" id="estrela4" name="nota" value="4">
+                        <label for="estrela4" title="4 estrelas">&#9733;</label>
+                        
+                        <input type="radio" id="estrela3" name="nota" value="3">
+                        <label for="estrela3" title="3 estrelas">&#9733;</label>
+                        
+                        <input type="radio" id="estrela2" name="nota" value="2">
+                        <label for="estrela2" title="2 estrelas">&#9733;</label>
+                        
+                        <input type="radio" id="estrela1" name="nota" value="1">
+                        <label for="estrela1" title="1 estrela">&#9733;</label>
+                    </div>
                 </div>
-
-                <form>
-                    <label> comente aqui</label>
-                    <textarea rows="5" cols="80" placeholder="escreva aqui..."></textarea>
-                    
+        
+                <form id="form-avaliacao">
+                    <label for="comentario">Comente aqui:</label>
+                    <textarea id="comentario" rows="4" placeholder="Escreva sua experiência aqui..."></textarea>
+                    <button type="submit" id="btn-enviar">Enviar Avaliação</button>
+                    <p id="msg-sucesso">Obrigada pela sua avaliação! ✨</p>
                 </form>
-
             </div>
-
-
         </section>
+        
 
     </Main>
 

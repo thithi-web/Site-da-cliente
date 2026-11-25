@@ -198,43 +198,129 @@ section{
     border-radius: 20px;
 }
 
-.avalie button:hover{
+.criadorar button{
+    width: 130px;
+    height: 70px;
+    margin-top: 40px;
+
+    font-size: 25px;
+    border: none;
+    border-radius: 20px;
+    background-color: #611e35;
+    color: #ffffff;
+}
+
+section .avalie{
+    
+}
+/* === CAIXA DE AVALIAÇÃO === */
+.avalie {
+    background-color: #70394c;
+    color: #f8f3f0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 90%;
+    max-width: 600px;
+    height: auto; /* Ajusta automaticamente ao conteúdo */
+    padding: 30px;
+    padding-right: 100px;
+    border-radius: 15px;
+    gap: 20px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.avaliacao {
+    background-color: antiquewhite;
+    color: #401423;
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Sistema de Estrelas */
+.estrelas {
+    display: flex;
+    flex-direction: row-reverse; /* Inverte a ordem para o efeito hover funcionar da esquerda para a direita */
+    justify-content: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.estrelas input {
+    display: none; /* Esconde as bolinhas do radio button */
+}
+
+.estrelas label {
+    font-size: 38px;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.2s, transform 0.2s;
+}
+
+/* Pinta as estrelas ao passar o mouse ou selecionar */
+.estrelas input:checked ~ label,
+.estrelas label:hover,
+.estrelas label:hover ~ label {
+    color: #f5b301;
     transform: scale(1.1);
-    background-color: #401423;
+}
+
+/* Formulário e Comentário */
+.avalie form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+    font-size: 18px;
+}
+
+.avalie textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    font-family: inherit;
+    font-size: 16px;
+    resize: vertical;
+    background-color: #f8f3f0;
+    color: #333;
+}
+
+/* Botão de Enviar */
+#btn-enviar {
+    background-color: antiquewhite;
+    color: #611e35;
+    width: 100%;
+    height: 45px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
     transition: 0.3s ease-in-out;
 }
 
-.descrição {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 60px;
-    height: 400px;
-    width: 600px;
-    font-size: 40px;
+#btn-enviar:hover {
+    background-color: #401423;
+    color: #f8f3f0;
+    transform: scale(1.02);
 }
 
-.descrição h2{
-    align-self: center;
-}
-
-.descrição p{
-    width: 300px;
-    align-self: flex-start;
-}
-
-.descrição button{
-    width: 100px;
-    align-self: flex-end;
-    border: none;
-    border-radius: 10px;
-    background-color: #70394c;
-
+/* Mensagem de confirmação oculta por padrão */
+#msg-sucesso {
+    display: none;
+    text-align: center;
+    color: #a8f0c6;
     font-weight: bold;
-    font-size: 20px;
-    width: 200px;
-    height: 60px;
+    font-size: 16px;
+    margin-top: 5px;
 }
+
 
 
 

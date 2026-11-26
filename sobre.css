@@ -15,21 +15,16 @@ header{
     font-size: 25px;
     height: 20vh;
 
- background-color: #70394c;
+    background-color: #70394c;
     position: relative;
     z-index: 2;
 
     box-shadow: -10px 5px 50px #70394c;
-
-    
 }
 
 header img{
-    width: 80px;
-    
-
-    
-    
+    width: 150px;
+    height: 120px;
     padding: 10px;
 }
 
@@ -38,22 +33,21 @@ nav{
 
     grid-template-columns: 1fr 1fr 1fr 1fr ;
     align-items: center;
-    
 
     color: antiquewhite;
-    background-color: transparent;
-    margin-left: 100px;
-
+    margin-left: 80px;
     font-weight: bold;
 }
 
 a{
     text-decoration: none;
     color: #f8f3f0;
-
-    position: relative;
-    display: inline-block;
     padding-bottom: 4px;
+
+    font-family: "Mona Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
 }
 
 a:hover{

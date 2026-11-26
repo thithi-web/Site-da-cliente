@@ -58,10 +58,12 @@ nav{
 a{
   text-decoration: none;
   color: #f8f3f0;
-
-  position: relative;
-  display: inline-block;
   padding-bottom: 4px;
+
+  font-family: "Mona Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
 }
 
 a:hover{

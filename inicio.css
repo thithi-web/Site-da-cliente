@@ -45,10 +45,14 @@ nav{
 a{
     text-decoration: none;
     color: #f8f3f0;
-
-    position: relative;
-    display: inline-block;
     padding-bottom: 4px;
+    font-family: "Mona Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    
+
+    
 }
 
 a:hover{
@@ -65,8 +69,8 @@ a:hover{
     background-color: #611e35;
     color: #f8f3f0;
     position: relative;
-    top: 500px;
-    left: 1200px;
+    top: 400px;
+    left: 1000px;
 
     width: 250px;
     height: 50px;
@@ -129,6 +133,10 @@ p{
   gap: 50px;
 }
 
+.container-images h2{
+    text-align: center;
+}
+
 .container-images {
     display: flex;
     align-items: center;
@@ -183,6 +191,8 @@ section{
     width: 100%;
     padding: 50px;
     gap: 0px;
+
+    background-image: url(./imagens/fundo\ 1.png);
     
 }
 

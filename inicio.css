@@ -23,8 +23,9 @@ header{
 }
 
 header img{
-    width: 100px;
+    width: 150px;
     padding: 10px;
+    height: 120px;
 }
 
 nav{
@@ -64,8 +65,8 @@ a:hover{
     background-color: #611e35;
     color: #f8f3f0;
     position: relative;
-    top: 400px;
-    left: 1000px;
+    top: 500px;
+    left: 1200px;
 
     width: 250px;
     height: 50px;
@@ -83,6 +84,7 @@ a:hover{
 #bAgendar:hover{
     background-color: #401423;
     font-size: 25px;
+    font-weight: bold;
     transform: scale(1.1);
     transition: 0.2s;
 }
@@ -93,6 +95,7 @@ a:hover{
     background-size: cover;
     box-shadow: 0px 10px 20px #00000043;
     position: relative;
+    
 
     bottom: 200px;
     z-index: -2;
@@ -170,8 +173,9 @@ section{
     flex-direction:row ;
     
     justify-content: center ;
-    height: 80vh;
+    min-height: 80vh;
     width: 100%;
+    padding: 50px;
     gap: 0px;
     
 }
@@ -210,24 +214,42 @@ section{
     color: #ffffff;
 }
 
-section .avalie{
-    
+.descrição{
+    font-size: 25px;
+    width: 500px;
 }
+
+.descrição h2{
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.descrição p{
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+.descrição button:hover{
+    background-color: #401423;
+    font-size: 26px;
+    transform: scale(1.2);
+    transition: 0.2s;
+    font-weight: bold;
+}
+
 /* === CAIXA DE AVALIAÇÃO === */
 .avalie {
     background-color: #70394c;
     color: #f8f3f0;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     width: 90%;
     max-width: 600px;
     height: auto; /* Ajusta automaticamente ao conteúdo */
-    padding: 30px;
-    padding-right: 100px;
     border-radius: 15px;
     gap: 20px;
+    padding: 30px;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
 }
 
@@ -336,66 +358,6 @@ section img:hover{
     transform: scale(1.1);
     transition: 0.8s;
 }
-.avalie{
-    background-color: #70394c;
-    display: flexbox;
-    flex-direction: column;
-
-    width: 800px;
-    height: 300px;
-    padding: 20px;
-    border-radius: 10px;
-    
-
-    align-items: flex-end;
-   
-
-}
-
-.avaliacao{
-    background-color: antiquewhite;
-    
-    width: 200px;
-    height: 80px;
-    margin-bottom: 40px;
-    border-radius: 10px;
-    padding: 10px;
-}
-
-.avaliacao p{
-    color: black;
-}
-.avalie form{
-    display: flexbox;
-    flex-direction: column;
-    width: 300px;
-    gap: 10px;
-    
-}
-
-.avalie, .avaliacao{
-    color: antiquewhite;
-}
-
-.avalie button{
-   background-color: antiquewhite;
-    border: none;
-    
-    width: 40px;
-    height: 40px;
-}
-.avalie button img{
-    transform: rotatez(90deg);
-    width: 40px;
-    height: 40px;
-    box-shadow: none;
-}
-.avalie textarea{
-    border-radius: 10px;
-    margin-top: 10px;
-    border: none;
-}
-
 
 
 
@@ -406,6 +368,7 @@ footer{
     width: auto;
     height: 40vh;
     background-color: #70394c;
+    color: #f8f3f0;
     line-height: 50px;
 }
 #nada img{

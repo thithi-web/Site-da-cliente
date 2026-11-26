@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Averia+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 
 *{
     margin: 0%;
@@ -111,6 +111,12 @@ a:hover{
 
     background-color: #70394c57;
     z-index: -1;
+}
+
+p{
+    font-family: "Averia Libre", system-ui;
+  font-weight: 300;
+  font-style: normal;
 }
 
 /* acabador de felicidade */

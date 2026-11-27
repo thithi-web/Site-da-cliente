@@ -122,6 +122,13 @@ p{
   font-style: normal;
 }
 
+main{
+    background-image: url(./imagens/fundo.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 /* acabador de felicidade */
 .container-slider {
   display: flex;
@@ -192,7 +199,6 @@ section{
     padding: 50px;
     gap: 0px;
 
-    background-image: url(./imagens/fundo\ 1.png);
     
 }
 

@@ -7,7 +7,10 @@
 }
 
 body{
-    background-color: #f8f3f0;
+    background-image: url(./imagens/fundo.png);
+    background-size: cover;
+    
+    background-repeat: no-repeat;
 }
 header{
     display: grid;
@@ -123,10 +126,7 @@ p{
 }
 
 main{
-    background-image: url(./imagens/fundo.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    
 }
 
 /* acabador de felicidade */
@@ -137,6 +137,7 @@ main{
   align-items: center;
   justify-content: center;
   gap: 50px;
+  
 }
 
 .container-images h2{
@@ -167,6 +168,7 @@ main{
   object-fit: cover;  /* Corta as sobras sem deformar a imagem */
   object-position: top; /* Foca na parte de cima da foto */
   border-radius: 10px;
+  box-shadow: none;
 }
 
 
